@@ -17,7 +17,7 @@ nextflow.enable.dsl = 2
 ========================================================================================
 */
 
-params.fasta = WorkflowMain.getGenomeAttribute(params, 'fasta')
+// params.fasta = WorkflowMain.getGenomeAttribute(params, 'fasta')
 
 /*
 ========================================================================================
@@ -25,7 +25,7 @@ params.fasta = WorkflowMain.getGenomeAttribute(params, 'fasta')
 ========================================================================================
 */
 
-WorkflowMain.initialise(workflow, params, log)
+// WorkflowMain.initialise(workflow, params, log)
 
 /*
 ========================================================================================
@@ -33,13 +33,16 @@ WorkflowMain.initialise(workflow, params, log)
 ========================================================================================
 */
 
-include { TEST } from './workflows/test'
+// include { TEST } from './workflows/test'
+include {test_mo519} from './workflows/test_mo519'
 
 //
 // WORKFLOW: Run main nf-core/test analysis pipeline
 //
-workflow NFCORE_TEST {
-    TEST ()
+workflow {
+
+    test_mo519()
+    
 }
 
 /*
@@ -52,9 +55,9 @@ workflow NFCORE_TEST {
 // WORKFLOW: Execute a single named workflow for the pipeline
 // See: https://github.com/nf-core/rnaseq/issues/619
 //
-workflow {
-    NFCORE_TEST ()
-}
+// workflow {
+//     NFCORE_TEST ()
+// }
 
 /*
 ========================================================================================
