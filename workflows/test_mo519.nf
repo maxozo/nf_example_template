@@ -14,7 +14,6 @@ process sayHello {
     echo 'Hello world! ${study_id}' > ${study_id}_file.txt
     python $workflow.projectDir/bin/test_mo519.py
     """
-
 }
 
 

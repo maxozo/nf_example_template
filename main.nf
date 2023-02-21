@@ -40,9 +40,7 @@ include {test_mo519} from './workflows/test_mo519'
 // WORKFLOW: Run main nf-core/test analysis pipeline
 //
 workflow {
-
     test_mo519()
-    
 }
 
 /*
